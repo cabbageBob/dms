@@ -1,0 +1,26 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://172.16.35.13:27017/dms  #如果设置了密码 mongodb://user:pwd@localhost:27017/dms
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.18.104:9300
+      repositories:
+        enabled: true
+#  redis:
+#    database: 11
+#    host: 172.16.35.50
+#    port: 6379
+#    password:
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-wait: -1ms
+#        max-idle: 8
+#        min-idle: 0
+#    timeout: 5000ms
+#  cache:
+#    type: redis
+project:
+  upload-path: C:\Users\10415\Desktop\dmstestfile
+  doc-path: C:\Users\10415\Desktop\dmstestfile

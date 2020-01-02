@@ -23,6 +23,19 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>snapshots</id>
+            <url>http://172.16.35.19:8081/repository/maven-snapshots</url>
+        </repository>
+    </distributionManagement>
+    <repositories>
+       <repository>
+           <id>snapshots</id>
+           <url>http://172.16.35.19:8081/repository/maven-snapshots</url>
+       </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

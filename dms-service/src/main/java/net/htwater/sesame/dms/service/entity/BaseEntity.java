@@ -4,14 +4,12 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
  * @author Jokki
  */
-public abstract class BaseEntity implements Serializable {
-    private static final long serialVersionUID = 7129590002905578982L;
+public abstract class BaseEntity {
 
     @Id
     private String id;

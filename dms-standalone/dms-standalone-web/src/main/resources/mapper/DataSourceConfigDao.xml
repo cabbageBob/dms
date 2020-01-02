@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.htwater.sesame.dms.web.dao.DataSourceConfigDao">
+<resultMap id="datasourceconfig" type="net.htwater.sesame.dms.web.entity.InDBDynamicDataSourceConfig">
+    <id column="u_id" property="id"/>
+    <result column="describe" property="describe"/>
+    <result column="dbname" property="dbname"/>
+    <result column="ip" property="ip"/>
+    <result column="port" property="port"/>
+    <result column="dbtype" property="dbtype"/>
+    <result column="username" property="username"/>
+    <result column="password" property="password"/>
+</resultMap>
+    <update id="update">
+        update dms_datasource_conf set `name`=#{name}, dbname=#{dbname}, ip=#{ip}, port=#{port},
+        dbtype=#{dbtype}, username=#{username}, `password`=#{password}, `describe`=#{describe}
+        where u_id=#{id}
+    </update>
+
+    <select id="findAll" resultType="net.htwater.sesame.dms.web.entity.InDBDynamicDataSourceConfig" resultMap="datasourceconfig">
+        select * from dms_datasource_conf
+    </select>
+    <select id="findById" resultType="net.htwater.sesame.dms.web.entity.InDBDynamicDataSourceConfig" resultMap="datasourceconfig">
+        select * from dms_datasource_conf where u_id=#{dataSourceId}
+    </select>
+    <insert id="add" useGeneratedKeys="true" keyProperty = "id" keyColumn = "id">
+        insert into dms_datasource_conf(u_id, `name`,dbname,ip,port,dbtype,username,`password`,`describe`) values (#{id}, #{name},#{dbname},#{ip},#{port},#{dbtype},#{username},#{password},#{describe})
+    </insert>
+    <delete id="remove">
+        delete from dms_datasource_conf where u_id=#{dataSourceId}
+    </delete>
+</mapper>

@@ -23,11 +23,23 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>snapshots</id>
+            <url>http://172.16.35.19:8081/repository/maven-snapshots</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hswebframework</groupId>
+            <artifactId>hsweb-easy-orm-rdb</artifactId>
         </dependency>
     </dependencies>
 </project>

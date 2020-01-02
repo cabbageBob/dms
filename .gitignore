@@ -15,5 +15,6 @@ bin
 .DS_Store
 routes.yml
 logs
+temp
 
 rebel.xml

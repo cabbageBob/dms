@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /dms
+  port: 8770
+spring:
+  profiles:
+    active: dev
+  freemarker:
+    suffix: .xml
+  servlet:
+    multipart:
+      max-file-size: 2048MB
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

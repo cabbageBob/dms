@@ -1,0 +1,38 @@
+spring:
+  data:
+    mongodb:
+      #uri: mongodb://172.16.35.13:27017/dms  #如果设置了密码 mongodb://user:pwd@localhost:27017/dms
+      uri: mongodb://172.16.35.13:27017/dms
+#  redis:
+#    database: 11
+#    host: 172.16.35.50
+#    port: 6379
+#    password:
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-wait: -1ms
+#        max-idle: 8
+#        min-idle: 0
+#    timeout: 5000ms
+#  cache:
+#    type: redis
+  elasticsearch:
+    index:
+      name: dms
+      shards: 1
+      replicas: 1
+    rest:
+      uris: ["http://172.16.35.52:9200"]
+
+project:
+  upload-path: /temp/upload/
+  doc-path: /temp/doc/
+  import-size: 10000
+  export-size: 10000
+
+async:
+  core-pool-size: 8
+  max-pool-size: 50
+  queue-capacity: 20
+  keep-alive-seconds: 60
